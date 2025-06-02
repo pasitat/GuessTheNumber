@@ -114,7 +114,7 @@ margin-top: 1rem;
 #arrow-up,
 #arrow-down {
   font-size: 3rem;
-  color: #D49D42;
+  /* color: #D49D42; // Color moved to individual rules */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -125,10 +125,12 @@ margin-top: 1rem;
 
 #arrow-up {
   top: 45%; /* Adjusted from original plan to be relative to main */
+  color: green;
 }
 
 #arrow-down {
   top: 55%; /* Adjusted from original plan to be relative to main */
+  color: red;
 }
 
 @keyframes moveUp {
@@ -158,5 +160,33 @@ margin-top: 1rem;
   100% {
     opacity: 0;
     transform: translate(-50%, 40px);
+  }
+}
+
+/* Trophy Icon Styles */
+#trophy-icon {
+  display: none;
+  font-size: 5rem;
+  color: #D49D42;
+  position: absolute;
+  left: 50%;
+  bottom: -16.5%; /* Relative to header, similar to .mid */
+  transform: translateX(-50%); /* Initial horizontal centering, animation handles full transform */
+  text-align: center;
+  z-index: 20; /* Above .mid if .mid is not hidden */
+}
+
+@keyframes scaleUpAndFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 50%) scale(0.5); /* Centered and scaled down */
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 50%) scale(1.5); /* Centered and scaled up */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 50%) scale(1.5); /* Centered, scaled up, and fades out */
   }
 }

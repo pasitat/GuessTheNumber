@@ -2,7 +2,7 @@
 
 // console.log(document.querySelector('.message').textContent);
 // document.querySelector('.message').textContent = '🎉 Correct Number'
-let secnumber = Math.trunc(Math.random()*20)+1;
+let secnumber = Math.trunc(Math.random()*30)+1;
 // document.querySelector('.mid').textContent = secnumber;
 let score = 20;
 let highscore = 0;
@@ -40,7 +40,7 @@ document.querySelector('.btnCheck').addEventListener('click', function(){
     }
 });
 document.querySelector('.btn').addEventListener('click', function(){
-    secnumber = Math.trunc(Math.random()*20)+1;
+    secnumber = Math.trunc(Math.random()*30)+1;
     score = 20; 
     document.querySelector('.message').textContent = 'Start Guessing....'
     document.querySelector('#score').textContent = score;

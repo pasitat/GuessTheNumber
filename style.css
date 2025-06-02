@@ -28,6 +28,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative; /* Added for absolute positioning context for arrows */
 }
 .left{
   width: 50%;
@@ -107,4 +108,55 @@ margin-top: 1rem;
 .message{
   margin-bottom: 3rem;
   height: 1.5rem;
+}
+
+/* Arrow Styles */
+#arrow-up,
+#arrow-down {
+  font-size: 3rem;
+  color: #D49D42;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: none;
+  z-index: 10;
+}
+
+#arrow-up {
+  top: 45%; /* Adjusted from original plan to be relative to main */
+}
+
+#arrow-down {
+  top: 55%; /* Adjusted from original plan to be relative to main */
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40px);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 40px);
+  }
 }
